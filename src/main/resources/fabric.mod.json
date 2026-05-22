@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "treasurescanner",
+  "version": "${version}",
+  "name": "Treasure Scanner",
+  "description": "Spawner, Chest ve Shulker Box ESP - Y200'den Y-55'e kadar görir!",
+  "authors": ["Sen"],
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.treasurescanner.TreasureScannerMod"
+    ]
+  },
+  "mixins": [
+    "treasurescanner.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "fabric-api": "*",
+    "minecraft": "~1.20.4"
+  }
+}
