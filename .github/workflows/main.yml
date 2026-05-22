@@ -9,8 +9,16 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - run: chmod +x gradlew
-      - run: ./gradlew build
+      - name: Install Gradle
+        run: |
+          wget -q https://services.gradle.org/distributions/gradle-8.6-bin.zip
+          unzip -q gradle-8.6-bin.zip
+          export PATH=$PWD/gradle-8.6/bin:$PATH
+          gradle --version
+      - name: Build
+        run: |
+          export PATH=$PWD/gradle-8.6/bin:$PATH
+          gradle build
       - uses: actions/upload-artifact@v4
         with:
           name: treasure-scanner-mod
